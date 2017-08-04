@@ -44,6 +44,9 @@ function ENT:StartTouch(ply)
         elseif plwep:GetHoldType() == "duel" then --Dual Wield Detection
             ply:EmitSound("items/gunpickup2.wav", Vector(0, 0, 0), 1, CHAN_AUTO, 1, 75, 0, 100)
             ply:GiveAmmo(72, plwepa, false)
+        else  --All else failed :c
+            ply:EmitSound("items/gunpickup2.wav", Vector(0, 0, 0), 1, CHAN_AUTO, 1, 75, 0, 100)
+            ply:GiveAmmo(100, plwepa, false) --Seems like a standard amount :v
         end
     end
 end
